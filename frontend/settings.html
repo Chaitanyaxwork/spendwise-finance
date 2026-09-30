@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#153f42"><meta name="description" content="Manage your SpendWise profile and app preferences."><title>Settings & profile — SpendWise</title><link rel="icon" href="./assets/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"><link rel="stylesheet" href="./css/style.css"></head>
+<body data-app-page="settings" data-page-title="Settings & profile" data-page-subtitle="Your account details and display preferences." data-active="settings">
+  <div id="app"></div>
+  <template id="page-content"><div class="page-content settings-page">
+    <section class="page-intro"><div><h2>Profile and preferences</h2><p>Review your profile and how SpendWise presents your workspace.</p></div></section>
+    <section class="settings-profile panel"><div class="profile-avatar-large" id="settings-avatar" aria-hidden="true">SW</div><div class="settings-profile-copy"><h2 id="settings-name">Loading profile…</h2><p id="settings-email" class="panel-caption">Account details</p></div><span class="account-mode-chip" id="settings-mode">—</span></section>
+    <section class="settings-grid"><article class="panel settings-card"><div class="panel-heading"><div><h2>Your profile</h2></div><span class="settings-card-icon" aria-hidden="true">◎</span></div><dl class="settings-dl"><div><dt>Name</dt><dd id="profile-name">—</dd></div><div><dt>Email</dt><dd id="profile-email">—</dd></div><div><dt>Account type</dt><dd id="profile-type">—</dd></div><div><dt>Account ID</dt><dd id="profile-id">Not supplied</dd></div></dl><p id="profile-state" class="panel-caption" role="status"></p></article>
+      <article class="panel settings-card"><div class="panel-heading"><div><h2>Application preferences</h2></div><span class="settings-card-icon" aria-hidden="true">⌘</span></div><div class="settings-row"><div><strong>Currency</strong><p>Financial amounts across SpendWise.</p></div><span class="preference-value"><span aria-hidden="true">₹</span> INR <small>Indian Rupee</small></span></div><div class="settings-row"><div><label for="compact-rows"><strong>Compact table rows</strong></label><p>Show more transaction rows at once.</p></div><input id="compact-rows" class="switch-input" type="checkbox" role="switch" aria-label="Use compact transaction rows"></div><p class="panel-caption">Currency is fixed to INR for this application experience.</p></article>
+    </section>
+    <section class="settings-signout panel"><div><h2>Log out</h2><p class="panel-caption">Logging out clears the current browser session. Demo records remain stored only in this browser.</p></div><button id="settings-logout" class="button button-danger-outline" type="button">Log out</button></section>
+    <p class="page-disclaimer">Demo profile details are stored in this browser. When connected to an API, the profile comes from `/api/auth/me`.</p>
+  </div></template>
+  <script src="./config.js"></script><script type="module" src="./js/settings.js"></script>
+</body>
+</html>

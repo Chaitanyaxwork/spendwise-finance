@@ -1,0 +1,15 @@
+{
+  "routes": [
+    { "path": "/", "title": "SpendWise — Home" },
+    { "path": "/login.html", "title": "Log in — SpendWise" },
+    { "path": "/register.html", "title": "Create account — SpendWise" },
+    { "path": "/dashboard.html", "title": "Dashboard — SpendWise" },
+    { "path": "/transactions.html", "title": "Transactions — SpendWise" },
+    { "path": "/budgets.html", "title": "Budgets — SpendWise" },
+    { "path": "/goals.html", "title": "Savings goals — SpendWise" },
+    { "path": "/analytics.html", "title": "Analytics — SpendWise" },
+    { "path": "/insights.html", "title": "Insights — SpendWise" },
+    { "path": "/simulator.html", "title": "Savings simulator — SpendWise" },
+    { "path": "/settings.html", "title": "Settings & profile — SpendWise" }
+  ]
+}

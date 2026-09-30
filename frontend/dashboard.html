@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#153f42">
+  <meta name="description" content="A clear picture of your money, all in one place."><title>Dashboard — SpendWise</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"><link rel="stylesheet" href="./css/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+</head>
+<body data-app-page="dashboard" data-page-title="Dashboard" data-page-subtitle="A clear picture of your money, all in one place." data-active="dashboard">
+  <div id="app"></div>
+  <template id="page-content"><div class="page-content dashboard-page">
+    <section class="welcome-row" aria-label="Personalized overview">
+      <div><p id="dashboard-date" class="eyebrow">This month</p><h2 id="dashboard-greeting">Good morning, there.</h2><p class="welcome-copy">Income, spending and savings for the month so far.</p></div>
+      <div class="button-row"><a class="button button-secondary" href="./transactions.html?action=import">Import CSV</a><a class="button button-primary" href="./transactions.html?action=add"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Add transaction</a></div>
+    </section>
+    <section class="metric-grid dashboard-metrics is-equation" aria-label="This month's financial summary">
+      <article class="metric-card"><div class="metric-label"><span>Total income</span></div><strong id="metric-income" class="metric-value">—</strong><small id="metric-income-note" class="metric-comparison">Loading comparison…</small></article>
+      <article class="metric-card"><div class="metric-label"><span>Total expenses</span></div><strong id="metric-expenses" class="metric-value">—</strong><small id="metric-expenses-note" class="metric-comparison">Loading comparison…</small></article>
+      <article class="metric-card"><div class="metric-label"><span>Net savings</span></div><strong id="metric-savings" class="metric-value">—</strong><small id="metric-savings-note" class="metric-comparison">Loading comparison…</small></article>
+      <article class="metric-card"><div class="metric-label"><span>Savings rate</span></div><strong id="metric-rate" class="metric-value">—</strong><small id="metric-rate-note" class="metric-comparison">Loading comparison…</small></article>
+    </section>
+    <section class="section-heading-row"><div><h2>Trends</h2></div><a class="text-link" href="./analytics.html">Open analytics</a></section>
+    <section class="content-grid chart-grid dashboard-charts" aria-label="Income and spending charts">
+      <article class="panel chart-panel"><div class="panel-heading"><div><h2>Income vs. expenses</h2></div><span class="panel-caption">Last 6 months</span></div><div class="chart-wrap chart-tall"><canvas id="cashflow-chart" role="img" aria-label="Bar chart comparing monthly income and expenses"></canvas></div></article>
+      <article class="panel chart-panel"><div class="panel-heading"><div><h2>Monthly expenses</h2></div><span class="panel-caption">Last 12 months</span></div><div class="chart-wrap chart-tall"><canvas id="spending-trend-chart" role="img" aria-label="Line chart of monthly expenses"></canvas></div></article>
+      <article class="panel chart-panel"><div class="panel-heading"><div><h2>Spending by category</h2></div><a class="small-link" href="./transactions.html">Review activity</a></div><div class="chart-wrap"><canvas id="category-chart" role="img" aria-label="Doughnut chart of current-month expense categories"></canvas></div><div id="category-legend" class="category-legend"></div></article>
+    </section>
+    <section class="content-grid dashboard-lower-grid">
+      <article class="panel"><div class="panel-heading"><div><h2>Latest transactions</h2></div><a class="small-link" href="./transactions.html">All transactions</a></div><div class="table-scroll"><table class="data-table"><thead><tr><th>Description</th><th>Category</th><th>Date</th><th class="align-right">Amount</th></tr></thead><tbody id="recent-transactions"></tbody></table></div><div id="transactions-empty" class="empty-state hidden"><span class="empty-icon" aria-hidden="true">↗</span><h3>No transactions yet</h3><p>Add your first entry to see your activity here.</p><a class="button button-secondary" href="./transactions.html?action=add">Add transaction</a></div></article>
+      <article class="panel"><div class="panel-heading"><div><h2>At a glance</h2></div><a class="small-link" href="./insights.html">Explore insights</a></div><div id="dashboard-insights" class="insight-list"></div></article>
+      <article class="panel"><div class="panel-heading"><div><h2>Budget progress</h2></div><a class="small-link" href="./budgets.html">Manage</a></div><div id="dashboard-budgets" class="progress-list"></div></article>
+      <article class="panel"><div class="panel-heading"><div><h2>Savings goals</h2></div><a class="small-link" href="./goals.html">View goals</a></div><div id="dashboard-goals" class="goal-summary-list"></div></article>
+    </section>
+    <section class="section-heading-row"><div><h2>Analytics signals</h2></div><a class="text-link" href="./analytics.html">Explore analytics</a></section>
+    <section class="dashboard-signal-grid" aria-label="Additional financial signals">
+      <article class="panel signal-panel"><div class="signal-heading"><span class="signal-icon" aria-hidden="true">↻</span><div><h2>Recurring expenses</h2></div></div><div id="dashboard-recurring" class="signal-content"></div></article>
+      <article class="panel signal-panel"><div class="signal-heading"><span class="signal-icon signal-amber" aria-hidden="true">!</span><div><h2>Unusual spending</h2></div></div><div id="dashboard-anomalies" class="signal-content"></div></article>
+      <article class="panel signal-panel"><div class="signal-heading"><span class="signal-icon" aria-hidden="true">⌁</span><div><h2>Cash-flow forecast</h2></div></div><div id="dashboard-forecast" class="signal-content"></div></article>
+      <article class="panel signal-panel"><div class="signal-heading"><span class="signal-icon" aria-hidden="true">◎</span><div><h2>Financial health</h2></div></div><div id="dashboard-health" class="signal-content"></div></article>
+    </section>
+    <p class="page-disclaimer">Overview comparisons use recorded transactions. Forecast, anomaly and financial-health results appear only when supplied by the connected analytics service.</p>
+  </div></template>
+  <script src="./config.js"></script><script type="module" src="./js/dashboard.js"></script>
+</body>
+</html>

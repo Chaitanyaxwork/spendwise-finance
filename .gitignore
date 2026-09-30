@@ -1,0 +1,81 @@
+# ============================================================
+# SpendWise .gitignore  (place at the REPO ROOT)
+# ============================================================
+
+# ---- Secrets and environment files (NEVER commit these) ----
+# Generated at deploy time from the API_BASE_URL env var (holds your API address)
+frontend/config.js
+.env
+.env.*
+!.env.example
+*.env
+secrets/
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+id_rsa*
+credentials.json
+service-account*.json
+
+# ---- Local databases and user data ----
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+instance/
+backend/instance/
+*.dump
+*.sql.gz
+*.bak
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# ---- Node / frontend tooling ----
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.npm/
+.next/
+.vercel/
+.turbo/
+
+# ---- Logs and temp files ----
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.swp
+
+# ---- Generated reports / uploads ----
+uploads/
+*.csv
+!frontend/**/sample*.csv
+report*.pdf
+
+# ---- Editors and OS ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Deploy platform local state ----
+.render/
+.vercel/

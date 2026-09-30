@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#153f42"><title>Create account — SpendWise</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"><link rel="stylesheet" href="./css/style.css">
+</head>
+<body data-app-page="auth" data-auth-mode="register">
+  <div id="app"></div>
+  <template id="page-content">
+    <section class="auth-card auth-card-wide" aria-labelledby="auth-title">
+      <p class="eyebrow">Create your account</p><h1 id="auth-title">Make money feel clearer.</h1><p class="auth-lede">Create your SpendWise demo account and start with a fresh perspective.</p>
+      <form id="register-form" class="form-stack" novalidate>
+        <label for="register-name">Full name</label><input id="register-name" name="name" type="text" autocomplete="name" placeholder="Your name" minlength="2" required>
+        <label for="register-email">Email address</label><input id="register-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+        <label for="register-password">Create password</label><div class="password-field"><input id="register-password" name="password" type="password" autocomplete="new-password" placeholder="At least 8 characters" minlength="8" required><button class="password-toggle" type="button" data-toggle-password="register-password" aria-label="Show password">Show</button></div>
+        <label for="register-confirm">Confirm password</label><input id="register-confirm" name="confirmPassword" type="password" autocomplete="new-password" placeholder="Enter it once more" minlength="8" required>
+        <label class="checkbox-row"><input id="register-terms" name="terms" type="checkbox" required><span>I agree to use this frontend demo with sample data only.</span></label>
+        <p id="register-message" class="form-message" aria-live="polite"></p>
+        <button class="button button-primary button-full" type="submit"><span class="button-label">Create account</span></button>
+      </form>
+      <p class="auth-switch">Already have an account? <a href="./login.html">Log in</a></p>
+      <p class="demo-note"><span aria-hidden="true">ⓘ</span> Demo mode is not secure storage and is not connected to a real identity service.</p>
+    </section>
+  </template>
+  <script src="./config.js"></script><script type="module" src="./js/auth.js"></script>
+</body>
+</html>

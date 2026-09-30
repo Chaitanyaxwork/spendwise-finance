@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#153f42"><meta name="description" content="Explore sourced financial insights in SpendWise."><title>Insights — SpendWise</title><link rel="icon" href="./assets/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"><link rel="stylesheet" href="./css/style.css"><script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script></head>
+<body data-app-page="insights" data-page-title="Insights" data-page-subtitle="Patterns and prompts, grounded in your recorded activity." data-active="insights">
+  <div id="app"></div>
+  <template id="page-content"><div class="page-content insights-page">
+    <section class="insight-feature panel"><div><h2>Signals worth a closer look</h2><p>Each insight is tied to a record, an explicit calculation, or data returned by your connected analytics service.</p></div></section>
+    <section class="insights-group"><div class="section-subhead"><div><h2>Spending & savings</h2></div><span class="panel-caption">Descriptive facts from available records</span></div><div class="insight-card-grid" id="insight-facts" aria-live="polite"></div></section>
+    <section class="insights-group"><div class="section-subhead"><div><h2>Budget context</h2></div><a class="small-link" href="./budgets.html">Review budgets</a></div><div class="insight-card-grid" id="insight-budgets"></div></section>
+    <section class="insights-group"><div class="section-subhead"><div><h2>Recurring items and anomalies</h2></div><a class="small-link" href="./analytics.html">Open Analytics</a></div><div class="insight-card-grid" id="insight-signals"></div></section>
+    <section class="panel chart-panel"><div class="panel-heading"><div><h2>Month-by-month view</h2></div><span class="panel-caption">Source: transactions available to this account</span></div><div id="insight-chart-state" class="panel-state" hidden></div><div class="chart-wrap chart-tall"><canvas id="insight-trend-chart" role="img" aria-label="Monthly recorded expenses"></canvas></div></section>
+    <p class="page-disclaimer">Insights are descriptive and not personalized financial advice. No anomaly, forecast or health result is inferred when the backend has not supplied it.</p>
+  </div></template>
+  <script src="./config.js"></script><script type="module" src="./js/insights.js"></script>
+</body>
+</html>

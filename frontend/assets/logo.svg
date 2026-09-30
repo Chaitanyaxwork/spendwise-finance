@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">SpendWise mark</title>
+  <desc id="desc">Ascending ledger bars and a rising line on a deep teal field.</desc>
+  <rect width="512" height="512" fill="#153f42"/>
+  <path d="M120 238 215 185 284 151 374 96" fill="none" stroke="#b8dfca" stroke-width="19" stroke-linecap="square" stroke-linejoin="round"/>
+  <path d="m342 93 34 3-8 32" fill="none" stroke="#b8dfca" stroke-width="19" stroke-linecap="square" stroke-linejoin="round"/>
+  <path d="M135 286h55v112h-55zM224 236h55v162h-55zM313 172h55v226h-55z" fill="#f5f4ed"/>
+</svg>
